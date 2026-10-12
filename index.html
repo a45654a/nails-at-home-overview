@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<style>body{margin:0}img{max-width:100%}</style>
+<title>Nails at Home — обзор проекта</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Раскладка: одна колонка для чтения, цифры строкой сверху, галерея пинов во всю ширину обёртки */
+:root {
+  --bg: #faf7f7;
+  --surface: #ffffff;
+  --fg: #1d1517;
+  --muted: #6b5a5e;
+  --line: #e6dcde;
+  --berry: #8e1b2b;
+  --pine: #1f3d33;
+  --font-display: 'Unbounded', 'Arial Black', sans-serif;
+  --font-body: 'Golos Text', 'Helvetica Neue', Arial, sans-serif;
+  --font-data: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171113; --surface: #20181a; --fg: #f3eaec; --muted: #b3a2a6; --line: #382b2e; --berry: #e58a97; --pine: #8fc3ad;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171113; --surface: #20181a; --fg: #f3eaec; --muted: #b3a2a6; --line: #382b2e; --berry: #e58a97; --pine: #8fc3ad;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.55; padding-inline: 20px; padding-block: 40px 72px; }
+.wrap { max-width: 1040px; margin-inline: auto; display: flex; flex-direction: column; gap: 56px; }
+.read { max-width: 68ch; display: flex; flex-direction: column; gap: 14px; }
+h1, h2 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(30px, 6vw, 52px); font-weight: 700; line-height: 1.08; }
+h2 { font-size: clamp(19px, 3.2vw, 24px); font-weight: 500; line-height: 1.25; }
+p { margin: 0; }
+a { color: var(--berry); }
+a:focus-visible { outline: 2px solid var(--berry); outline-offset: 2px; }
+.eyebrow { font-family: var(--font-data); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--berry); }
+.lead { font-size: 20px; line-height: 1.45; }
+.muted { color: var(--muted); }
+header { display: flex; flex-direction: column; gap: 16px; }
+.status { display: inline-flex; align-self: flex-start; gap: 10px; align-items: center; font-family: var(--font-data); font-size: 13px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pine); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-block: 1px solid var(--line); }
+.fact { padding: 20px 20px 20px 0; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.fact b { font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.fact span { color: var(--muted); font-size: 15px; }
+section { display: flex; flex-direction: column; gap: 20px; }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.pins { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 18px 14px; }
+.pin { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.pin img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 10px; display: block; background: var(--line); }
+.pin figcaption { display: flex; flex-direction: column; gap: 2px; }
+.pin-title { font-size: 14px; line-height: 1.3; }
+.pin-meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); }
+.table-box { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 16px; }
+th, td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-data); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.when { font-family: var(--font-data); font-size: 14px; white-space: nowrap; color: var(--berry); }
+.note { border-left: 0; padding: 18px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Обзор проекта · 12 октября 2026</span>
+  <h1>Nails at Home: блог про маникюр с трафиком из Pinterest</h1>
+  <p class="lead read">Англоязычный сайт про маникюр дома для аудитории США. Людей приводит Pinterest бесплатно, деньги дают реклама на сайте и партнёрские ссылки на товары.</p>
+  <span class="status"><span class="dot"></span>Идёт бесплатный тест, сайта ещё нет</span>
+</header>
+
+<div class="facts">
+  <div class="fact"><b>24</b><span>пина запланированы на 14–23 октября</span></div>
+  <div class="fact"><b>1891</b><span>поисковый запрос Pinterest собран и разложен по темам</span></div>
+  <div class="fact"><b>8 из 12</b><span>сайтов-конкурентов из выдачи стоят на платных рекламных сетях</span></div>
+  <div class="fact"><b>$1.05</b><span>потрачено всего, на 25 картинок</span></div>
+</div>
+
+<section>
+  <h2>Как это должно зарабатывать</h2>
+  <div class="read">
+    <p>Человек ищет в Pinterest, например, «short christmas nails», видит нашу картинку, переходит на статью. В статье стоит реклама, которая платит за просмотры, и ссылки на товары, которые платят процент с покупки. Пин живёт месяцами и приводит людей без доплат.</p>
+    <p>Сейчас мы на шаге до сайта: проверяем, показывает ли Pinterest наши картинки вообще. Если нет, домен и статьи были бы выброшенными деньгами и временем.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Что уже сделано</h2>
+  <ul class="read">
+    <li>Разобраны 24 видео канала PinTrafficLab, метод переложен на нишу ногтей. Сомнительные приёмы автора отсеяны.</li>
+    <li>Собраны 1891 подсказка поиска Pinterest: это то, что люди реально вбивают. Из них 223 про «сделать дома, для начинающих».</li>
+    <li>Снята живая выдача по 12 запросам: кто стоит наверху, сколько там сайтов, видео и свежих пинов.</li>
+    <li>Составлен план первых 20 статей под реальные запросы.</li>
+    <li>Создан бизнес-аккаунт <a href="https://www.pinterest.com/nailsathomeideas/">pinterest.com/nailsathomeideas</a>, пять тематических досок.</li>
+    <li>Нарисованы и проверены 24 пина, загружены одним файлом с расписанием. Pinterest публикует их сам.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Пины в тесте</h2>
+  <p class="read muted">Два формата поровну: чистое фото и то же фото с маленькой подписью. Под каждым пином дата выхода. По статистике будет видно, какой формат Pinterest показывает охотнее. Фото нарисованы нейросетью, каждое просмотрено вручную.</p>
+  <div class="pins">
+<figure class="pin"><img src="thumbs/01.jpg" alt="Short Christmas Nails You Can Do at Home" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Short Christmas Nails You Can Do at Home</span><span class="pin-meta">14.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/02.jpg" alt="Simple Christmas Nails for Short Nails" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Simple Christmas Nails for Short Nails</span><span class="pin-meta">16.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/03.jpg" alt="Red Christmas Nails: Short and Classic" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Red Christmas Nails: Short and Classic</span><span class="pin-meta">18.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/04.jpg" alt="Green Christmas Nails Short and Simple" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Green Christmas Nails Short and Simple</span><span class="pin-meta">20.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/05.jpg" alt="White Christmas Nails with Snowflakes" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">White Christmas Nails with Snowflakes</span><span class="pin-meta">22.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/06.jpg" alt="Christmas French Tip Nails Short" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Christmas French Tip Nails Short</span><span class="pin-meta">23.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/07.jpg" alt="Easy DIY Christmas Gel Nails at Home" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Easy DIY Christmas Gel Nails at Home</span><span class="pin-meta">14.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/08.jpg" alt="Christmas Gel Nails Short DIY Ideas" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Christmas Gel Nails Short DIY Ideas</span><span class="pin-meta">17.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/09.jpg" alt="Christmas Nail Art for Beginners" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Christmas Nail Art for Beginners</span><span class="pin-meta">19.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/10.jpg" alt="Builder Gel Christmas Nails Short" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Builder Gel Christmas Nails Short</span><span class="pin-meta">20.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/11.jpg" alt="Short Winter Nails 2026: Simple Ideas" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Short Winter Nails 2026: Simple Ideas</span><span class="pin-meta">15.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/12.jpg" alt="Simple Winter Nails for Short Natural Nails" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Simple Winter Nails for Short Natural Nails</span><span class="pin-meta">17.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/13.jpg" alt="Winter Gel Nails Ideas Short Square" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Winter Gel Nails Ideas Short Square</span><span class="pin-meta">19.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/14.jpg" alt="Blue Winter Nails Short" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Blue Winter Nails Short</span><span class="pin-meta">21.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/15.jpg" alt="Winter Nails Almond Short" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Winter Nails Almond Short</span><span class="pin-meta">22.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/16.jpg" alt="Winter Nail Trends 2026" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Winter Nail Trends 2026</span><span class="pin-meta">23.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/17.jpg" alt="New Years Nails 2026 Short and Simple" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">New Years Nails 2026 Short and Simple</span><span class="pin-meta">15.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/18.jpg" alt="New Years Nails Black and Gold" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">New Years Nails Black and Gold</span><span class="pin-meta">18.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/19.jpg" alt="New Years Nails with Glitter and Sparkle" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">New Years Nails with Glitter and Sparkle</span><span class="pin-meta">19.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/20.jpg" alt="Gold New Years Nails Short" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Gold New Years Nails Short</span><span class="pin-meta">21.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/21.jpg" alt="Short Gel Nails Ideas You Can Do at Home" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Short Gel Nails Ideas You Can Do at Home</span><span class="pin-meta">16.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/22.jpg" alt="Short Nail Ideas Simple and Natural" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Short Nail Ideas Simple and Natural</span><span class="pin-meta">18.10 · чистое фото</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/23.jpg" alt="Builder Gel Nails Short and Natural" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Builder Gel Nails Short and Natural</span><span class="pin-meta">20.10 · с подписью</span></figcaption></figure>
+<figure class="pin"><img src="thumbs/24.jpg" alt="Short French Tip Nails" width="360" height="540" loading="lazy"><figcaption><span class="pin-title">Short French Tip Nails</span><span class="pin-meta">21.10 · чистое фото</span></figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Что показала разведка рынка</h2>
+  <ul class="read">
+    <li><b>Ниша платит.</b> Из 12 проверенных сайтов из выдачи три стоят на Mediavine, два на Raptive, два на Ezoic, один на AdSense. Сколько они зарабатывают, не установлено.</li>
+    <li><b>Сезонные подборки дают место сайтам.</b> По «short christmas nails» в верхних 50 пинах 23 разных сайта, половина пинов моложе месяца.</li>
+    <li><b>Инструкции в Pinterest заняты видео.</b> По «builder gel tutorial for beginners» 48 из 50 верхних пинов видео. Поэтому сайт строится не вокруг инструкций, а вокруг подборок «коротко, просто, можно сделать дома».</li>
+    <li><b>Лидеры выкладывают чистое фото.</b> У 11 из 12 пинов, ведущих на сайты, нет ни одной надписи.</li>
+    <li><b>Размер аккаунта не барьер.</b> У авторов верхних пинов обычно 64–325 подписчиков.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Что дальше</h2>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Когда</th><th>Что происходит</th></tr></thead>
+      <tbody>
+        <tr><td class="when">14–23.10</td><td>Pinterest публикует 24 пина, по 2–3 в день</td></tr>
+        <tr><td class="when">около 21.10</td><td>Первая статистика. Вторая пачка на 60–100 пинов в формате, который показывают лучше</td></tr>
+        <tr><td class="when">начало ноября</td><td>Решение. Есть показы и сохранения: покупаем домен и делаем сайт. Ноль: меняем подачу или тему, сайт не покупаем</td></tr>
+        <tr><td class="when">после решения</td><td>Сайт, 20–30 статей, заявка на рекламу Google. К февральскому сезону (День святого Валентина) пины публикуются в декабре</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Деньги и ожидания</h2>
+  <div class="read">
+    <p><b>Расходы.</b> Потрачено $1.05. Сайт обойдётся примерно в $30 в год за домен и хостинг, плюс около $0.04 за каждую новую картинку.</p>
+    <p><b>Доходы.</b> По открытым источникам, которые мы сами не перепроверяли: до $100 в месяц такой блог доходит за 6–12 месяцев регулярной работы, до $1000 за 12–24 месяца, и большинство не доходит. Первые деньги будут центами. Публичных кейсов новых блогов именно про ногти с цифрами найти не удалось.</p>
+    <p class="note">Правило остановки: если за 4 месяца после запуска сайта нет 1000 визитов в месяц, меняем тему, а не наращиваем объём.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Чего мы пока не знаем</h2>
+  <ul class="read">
+    <li>Даст ли Pinterest показы новому аккаунту. Это и проверяет текущий тест.</li>
+    <li>Переходят ли люди с пинов на сайт. Тест без сайта этого не покажет, а деньги именно в переходах.</li>
+    <li>Не режет ли Pinterest показы картинкам с меткой «сделано ИИ». У лидеров настоящие фото мастеров.</li>
+    <li>Успеем ли к Рождеству: сезон уже идёт, реальная цель по срокам — Валентин и весна.</li>
+    <li>Аккаунт один, и на нём будет держаться весь трафик.</li>
+  </ul>
+</section>
+
+<footer>Данные по выдаче и запросам сняты из Pinterest 12 октября 2026 года без входа в аккаунт, из европейского браузера. Оценки доходов взяты из открытых источников и не перепроверены.</footer>
+
+</div>
+
+</body>
+</html>
